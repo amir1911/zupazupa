@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Kelas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:wght@200..800&family=Poppins:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Background Video
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="vidio/amir3.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video> -->
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i> Zupazupa106
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active" data-section="beranda">Beranda</a></li>
+                <li><a href="zupa.html" class="nav-link" data-section="blog">Blog</a></li>
+                <li><a href="galeri.html" class="nav-link" data-section="galeri">Galeri</a></li>
+                <li><a href="anggota.html" class="nav-link" data-section="profil">Anggota Kelas</a></li>
+                <!-- <li><a href="#" class="nav-link" data-section="jadwal">Jadwal</a></li> -->
+                
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/foto3.jpg" class="d-block w-100" alt="Pantai Pesisir Barat">
+                <!-- <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Selamat Datang</h1>
+                    <p data-aos="fade-up" data-aos-delay="300">Portal Kelas - Tempat Berbagi Kenangan</p>
+                </div> -->
+            </div>
+            <div class="carousel-item">
+                <img src="img/foto2.jpg" class="d-block w-100" alt="Pemandangan Pantai">
+                <!-- <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Galeri Kelas</h1>
+                    <p data-aos="fade-up" data-aos-delay="300">Dokumentasi Kegiatan Bersama</p>
+                </div> -->
+            </div>
+            <div class="carousel-item">
+                <img src="img/foto18.jpg" class="d-block w-100" alt="Surfing di Pesisir Barat">
+                <!-- <div class="carousel-caption">
+                    <h1 data-aos="fade-up">Kenangan Bersama</h1>
+                    <p data-aos="fade-up" data-aos-delay="300">Momen-momen Tak Terlupakan</p>
+                </div> -->
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Tentang -->
+  <section id="tentang" class="tentang-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Tentang Kelas Zupazupa106</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="tentang-img">
+          <img src="img/photo1.jpg" alt="Kelas Zupa PalComTech" class="img-fluid rounded">
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="tentang-content">
+          <p>
+            Kelas Zupazupa106 adalah salah satu kelas  di PalComTech Palembang yang terdiri dari 10 anggota  yang penuh semangat dan dedikasi tinggi dalam belajar.
+          </p>
+          <p>
+            Meskipun berasal dari latar belakang yang berbeda, para anggota Kelas Zupazupa saling mendukung satu sama lain dalam mengejar pengetahuan dan keterampilan, terutama di bidang teknologi dan desain.
+          </p>
+          <p>
+            Kegigihan, kekompakan, dan semangat belajar yang tak pernah padam menjadi ciri khas kelas ini. Bersama-sama, mereka terus berproses untuk mencapai impian dan menjadi generasi yang produktif dan kreatif.
+          </p>
+          <a href="galeri.html" class="btn btn-more">Lihat Momen Kelas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="container py-4">
+    <h3 class="mb-4 text-center">Tentang Momen ZupaZupa106</h3>
+
+   
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img src="img/foto18.jpg" class="img-fluid rounded shadow" alt="Momen Awal Kelas">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h5 class="fw-bold">Awal Terbentuk</h5>
+                <p>ZupaZupa106 merupakan kelas yang terbentuk dari semangat sepuluh anggota luar biasa di PalComTech Palembang. 
+                   Berawal dari pertemuan awal dalam sesi orientasi, mereka langsung menunjukkan kekompakan, semangat belajar yang tinggi, 
+                   dan keinginan besar untuk berkembang di bidang teknologi dan kreativitas digital.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row mb-5">
+        <div class="col-md-6 order-md-2">
+            <img src="img/foto18.jpg" class="img-fluid rounded shadow" alt="Momen Awal Kelas">
+        </div>
+        <div class="col-md-6 d-flex align-items-center order-md-1">
+            <div>
+                <h5 class="fw-bold">Semangat Belajar</h5>
+                <p>Setiap anggota kelas ZupaZupa106 memiliki latar belakang berbeda, namun dipersatukan oleh tujuan yang sama: menjadi pribadi yang 
+                   unggul di dunia digital. Mereka aktif dalam diskusi, kerja kelompok, hingga sesi praktikum—selalu siap menghadapi tantangan
+                   dan berbagi ilmu antar sesama.
+                </p>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img src="img/foto15.jpg" class="img-fluid rounded shadow" alt="Kegiatan Outdoor">
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h5 class="fw-bold">Kegiatan Kebersamaan</h5>
+                <p>Tak hanya di dalam kelas, ZupaZupa106 juga mempererat hubungan melalui kegiatan di luar seperti outbound, kerja tim,
+                   dan kunjungan edukatif. Momen-momen ini membangun ikatan emosional yang kuat dan memperkuat kerjasama dalam setiap proyek kursus.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row mb-5">
+        <div class="col-md-6 order-md-2">
+            <img src="img/foto11.jpg" class="img-fluid rounded shadow" alt="Presentasi Proyek">
+        </div>
+        <div class="col-md-6 d-flex align-items-center order-md-1">
+            <div>
+                <h5 class="fw-bold">Proyek dan Prestasi</h5>
+                <p>Setiap anggota ZupaZupa106 memiliki peran penting dalam proyek-proyek kelas seperti website, presentasi, dan karya kreatif lainnya.
+                   Dari presentasi tugas akhir, hingga ide startup mini, mereka menunjukkan dedikasi dan kreativitas. Beberapa di antaranya bahkan
+                   sudah mulai membangun portofolio profesional sejak masih dalam masa kursus.
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+    <!-- Note Section -->
+    <div class="note" data-aos="fade-up">
+        <h1>📒 Masukan Kata-kata Mu</h1>
+        <div class="note-input">
+            <textarea id="noteInput" placeholder="Tulis kata-kata di sini..."></textarea>
+            <button id="saveNote">Simpan</button>
+        </div>
+        <h2>📌 Daftar Quotes</h2>
+        <div id="noteList"></div>
+    </div>
+
+    <!-- Modal Foto -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <!-- Tentang ZUPAZUPA106 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-info">
+          <h3>ZUPAZUPA106</h3>
+          <p>
+            Kelas kursus dengan semangat tinggi di PalComTech Palembang. Terdiri dari 10 anggota yang aktif, kreatif, dan siap berkontribusi di dunia digital!
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-links">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#projek">Projek</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kegiatan -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-links">
+          <h4>Kegiatan Kami</h4>
+          <ul>
+            <li><a href="#">Kursus Web</a></li>
+            <li><a href="#">Desain UI/UX</a></li>
+            <li><a href="#">Projek Kelompok</a></li>
+            <li><a href="#">Presentasi Hasil</a></li>
+            <li><a href="#">Kompetisi Internal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Form Berita -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-newsletter">
+          <h4>Info Kelas</h4>
+          <p>Ikuti info terbaru dari ZUPAZUPA106 melalui email Anda!</p>
+          <form>
+            <input type="email" placeholder="Email Anda">
+            <input type="submit" value="Langganan">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bagian Bawah -->
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="footer-text">© 2025 ZUPAZUPA106 • Dibuat dengan ❤️ oleh AMR</p>
+          <div class="social-icons">
+            <a href="https://github.com/amir1911" class="social-icon" title="GitHub AMR" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+            <a href="https://www.instagram.com/amirrrrrr_1?igsh=MWV1dzMzczlxY2U1Yg==" class="social-icon" target="_blank" title="Instagram AMR">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@amir-i1e6m?si=S67q0kjDxdpSbSVL" class="social-icon" target="_blank" title="YouTube AMR">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+    <!-- Audio musik -->
+    <audio id="bgmusic" loop>
+        <source src="sound/Lomba Sihir - Ribuan Memori (Official Lyric Video)-yt.savetube.me.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Tombol musik ON/OFF -->
+    <button id="music-button" onclick="toggleMusic()">
+        <i class="bi bi-music-note"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Audio Control
+        const audio = document.getElementById('bgmusic');
+        const button = document.getElementById('music-button');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                audio.play();
+                isPlaying = true;
+                button.innerHTML = '<i class="bi bi-volume-up"></i>';
+                button.classList.add('playing');
+            } else {
+                audio.pause();
+                isPlaying = false;
+                button.innerHTML = '<i class="bi bi-music-note"></i>';
+                button.classList.remove('playing');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Note Functionality
+        const noteInput = document.getElementById('noteInput');
+        const saveNoteBtn = document.getElementById('saveNote');
+        const noteList = document.getElementById('noteList');
+
+        // Load notes from memory
+        let notes = [];
+
+        function saveNote() {
+            const noteText = noteInput.value.trim();
+            if (noteText === '') {
+                alert('Silakan masukkan teks terlebih dahulu!');
+                return;
+            }
+
+            const note = {
+                id: Date.now(),
+                text: noteText,
+                timestamp: new Date().toLocaleString('id-ID')
+            };
+
+            notes.unshift(note);
+            noteInput.value = '';
+            displayNotes();
+        }
+
+        function deleteNote(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus catatan ini?')) {
+                notes = notes.filter(note => note.id !== id);
+                displayNotes();
+            }
+        }
+
+        function displayNotes() {
+            noteList.innerHTML = '';
+            
+            if (notes.length === 0) {
+                noteList.innerHTML = '<p style="text-align: center; color: #666; font-style: italic;">Belum ada catatan. Mulai tulis sekarang!</p>';
+                return;
+            }
+
+            notes.forEach(note => {
+                const noteItem = document.createElement('div');
+                noteItem.className = 'note-item';
+                noteItem.innerHTML = `
+                    <div class="note-content">${note.text}</div>
+                    <div class="note-time">${note.timestamp}</div>
+                    <button class="delete-btn" onclick="deleteNote(${note.id})">
+                        <i class="fas fa-trash"></i> Hapus
+                    </button>
+                `;
+                noteList.appendChild(noteItem);
+            });
+        }
+
+        // Event Listeners
+        saveNoteBtn.addEventListener('click', saveNote);
+        noteInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                saveNote();
+            }
+        });
+
+        // Modal Functions
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+
+        // Initialize
+        displayNotes();
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        if (href.startsWith('#')) {
+            e.preventDefault();
+
+            // Scroll ke section
+            const section = document.querySelector(href);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Atur active link
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

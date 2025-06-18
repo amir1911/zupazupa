@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Zupa Zupa 106</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #3182ce;
+            --secondary-color: #805ad5;
+            --text-color: #2d3748;
+            --white: #ffffff;
+            --black: #000000;
+            --gray-light: #f5f5f5;
+            --gray-dark: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            --gradient-header: linear-gradient(to right, #1e40af, #4f46e5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gray-light);
+            color: var(--gray-dark);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @supports not (background-clip: text) {
+            .logo {
+                color: var(--primary-color);
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            transition: var(--transition);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: block;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+            display: block;
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-header);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-button {
+            color: #93c5fd;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .back-button:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .spacer {
+            width: 3rem;
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+            padding: 0 20px;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, 
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Masonry Layout */
+        .masonry-container {
+            column-count: 1;
+            column-gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 576px) {
+            .masonry-container {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .masonry-container {
+                column-count: 3;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .masonry-container {
+                column-count: 4;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            background: var(--white);
+        }
+
+        .masonry-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .masonry-item:hover .img-overlay {
+            opacity: 1;
+        }
+
+        .img-overlay h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .img-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: 50px auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .modal.show .modal-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--white);
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+
+        .modal-caption {
+            margin: 20px auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .modal-prev, 
+        .modal-next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            font-size: 30px;
+            font-weight: bold;
+            transition: var(--transition);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            transform: translateY(-50%);
+            border: none;
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        .modal-prev:hover, 
+        .modal-next:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--gray-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        .fadeIn {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+                gap: 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-link {
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                margin: 0 2rem;
+                display: block;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1rem;
+            }
+            
+            .modal-prev,
+            .modal-next {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                line-height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .gallery-filter {
+                padding: 0 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .masonry-container {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Music Button */
+#music-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#music-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#music-button.playing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i> Zupa Zupa 106
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-section="beranda">Beranda</a></li>
+                 <li><a href="zupa.html" class="nav-link" data-section="blog">Blog</a></li>
+                <li><a href="galeri.html" class="nav-link active" data-section="galeri">Galeri</a></li>
+                <li><a href="anggota.html" class="nav-link" data-section="profil">Anggota Kelas</a></li>
+                <!-- <li><a href="#" class="nav-link" data-section="jadwal">Jadwal</a></li> -->
+               
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Judul di tengah -->
+            <div class="header-content">
+                <h1 class="header-title">Zupa Zupa 106</h1>
+                <p class="header-subtitle">Galeri Momen Seru dan Kenangan Kelas Kami</p>
+            </div>
+
+            <!-- Spacer kanan agar judul tetap tengah -->
+            <div class="spacer"></div>
+        </div>
+    </header>
+
+    <!-- Filter Galeri -->
+    <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="kelas">Kegiatan Kelas</button>
+        <button class="filter-btn" data-filter="photobooth">Photobooth</button>
+        <button class="filter-btn" data-filter="project">Project</button>
+        <!-- <button class="filter-btn" data-filter="lomba">Lomba</button> -->
+    </div>
+
+    <!-- Galeri Foto -->
+    <div class="masonry-container">
+        <div class="masonry-item" data-category="photobooth" onclick="openModal('img/photo2.jpg', 'Photobooth Berbusana Muslim')">
+            <img src="img/photo2.jpg" alt="Photobooth Berbusana Muslim">
+            <div class="img-overlay">
+                <h3>Photobooth Berbusana Muslim</h3>
+                <p>Kebersamaan yang berkelas dalam harmoni busana muslim</p>
+            </div>
+        </div>
+
+        <div class="masonry-item" data-category="photobooth" onclick="openModal('img/foto14.jpg', 'Photobooth putih abu-abu')">
+            <img src="img/foto14.jpg" alt="Photobooth Berbusana Muslim 2">
+            <div class="img-overlay">
+                <h3>Photobooth putih abu-abu</h3>
+                <p>Momen kebersamaan yang penuh kehangatan</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="photobooth" onclick="openModal('img/foto15.jpg', 'Photobooth putih abu-abu')">
+            <img src="img/foto15.jpg" alt="Photobooth Berbusana Muslim 2">
+            <div class="img-overlay">
+                <h3>Photobooth putih abu-abu</h3>
+                <p>Momen kebersamaan yang penuh kehangatan</p>
+            </div>
+        </div>
+
+        <div class="masonry-item" data-category="photobooth" onclick="openModal('img/foto10.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto10.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Full Team</h3>
+                <p>10 anggota</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/foto18.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto18.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak hera</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/foto6.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto6.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <!-- <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p> -->
+            </div>
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto5.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto5.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto1.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto1.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto8.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto8.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto7.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto7.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto9.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto9.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Full </h3>
+                <p>Anggota 10</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto10.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto10.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto11.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto11.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto12.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto12.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto13.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto13.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto14.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto14.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto15.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto15.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/foto16.jpg', 'Diskusi Kelompok')">
+            <img src="img/foto16.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo1.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo1.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/poto9.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto9.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Potbar </h3>
+                <p>Bukber</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo3.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo3.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo4.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo4.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo5.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo5.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo6.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo6.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo7.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo7.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="project" onclick="openModal('img/photo8.jpg', 'Diskusi Kelompok')">
+            <img src="img/photo8.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto1.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto1.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto2.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto2.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto3.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto3.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto4.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto4.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto5.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto5.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto6.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto6.jpg" alt="Diskusi Kelompok">
+            <div class="img-overlay">
+                <h3>Full </h3>
+                <p>Anggota 10</p>
+            </div>
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto7.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto7.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto8.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto8.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto8.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto8.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto9.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto9.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto10.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto10.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto11.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto11.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto12.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto12.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto13.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto13.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto14.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto14.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+        <div class="masonry-item" data-category="kelas" onclick="openModal('img/poto15.jpg', 'Diskusi Kelompok')">
+            <img src="img/poto15.jpg" alt="Diskusi Kelompok">
+            <!-- <div class="img-overlay">
+                <h3>Potbar Instruktur</h3>
+                <p>kak kiel</p>
+            </div> -->
+        </div>
+
+     
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <span class="modal-prev" onclick="changeImage(-1)">&#10094;</span>
+        <img class="modal-content" id="modalImage">
+        <span class="modal-next" onclick="changeImage(1)">&#10095;</span>
+        <div class="modal-caption" id="caption"></div>
+    </div>
+
+    <!-- <footer>
+        <p>&copy; 2025 Galeri Zupa Zupa 106 | Kenangan Indah Kelas Kami</p>
+    </footer> -->
+
+     <!-- Audio musik -->
+    <audio id="bgmusic" loop>
+        <source src="sound/Lomba Sihir - Ribuan Memori (Official Lyric Video)-yt.savetube.me.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Tombol musik ON/OFF -->
+    <button id="music-button" onclick="toggleMusic()">
+        <i class="bi bi-music-note"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Audio Control
+        const audio = document.getElementById('bgmusic');
+        const button = document.getElementById('music-button');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                audio.play();
+                isPlaying = true;
+                button.innerHTML = '<i class="bi bi-volume-up"></i>';
+                button.classList.add('playing');
+            } else {
+                audio.pause();
+                isPlaying = false;
+                button.innerHTML = '<i class="bi bi-music-note"></i>';
+                button.classList.remove('playing');
+            }
+        }
+
+
+
+   
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on nav link (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Image modal functionality
+        let modalImages = [];
+        let currentImageIndex = 0;
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const captionText = document.getElementById('caption');
+
+        // Initialize modal images array
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.masonry-item');
+            items.forEach(function(item) {
+                const onclick = item.getAttribute('onclick');
+                if (onclick) {
+                    const match = onclick.match(/openModal\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
+                    if (match && match.length >= 3) {
+                        modalImages.push({
+                            src: match[1],
+                            caption: match[2]
+                        });
+                    }
+                }
+            });
+        });
+
+        function openModal(imageSrc, caption) {
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            captionText.innerHTML = caption;
+            
+            // Find the index of the current image
+            for (let i = 0; i < modalImages.length; i++) {
+                if (modalImages[i].src === imageSrc) {
+                    currentImageIndex = i;
+                    break;
+                }
+            }
+            
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            
+            // Disable scrolling on body
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);
+            
+            // Enable scrolling on body
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            // Loop back to the beginning or end
+            if (currentImageIndex >= modalImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = modalImages.length - 1;
+            }
+            
+            modalImg.classList.remove('fadeIn');
+            void modalImg.offsetWidth; // Trigger reflow
+            modalImg.classList.add('fadeIn');
+            
+            modalImg.src = modalImages[currentImageIndex].src;
+            captionText.innerHTML = modalImages[currentImageIndex].caption;
+        }
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Toggle active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter items with animation
+                    const items = document.querySelectorAll('.masonry-item');
+                    
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            item.classList.add('fadeIn');
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.remove('fadeIn');
+                        }
+                    });
+                });
+            });
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === 'block') {
+                if (event.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

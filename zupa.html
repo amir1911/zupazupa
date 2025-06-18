@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Momen ZupaZupa106</title>
+       <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+       /* CSS Variables untuk konsistensi */
+:root {
+    --primary-color: #3182ce;
+    --secondary-color: #805ad5;
+    --text-color: #2d3748;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 80px; /* Kompensasi untuk navbar fixed */
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback untuk browser yang tidak mendukung background-clip */
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    display: block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    display: block;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c5282;
+    margin-bottom: 50px;
+}
+
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.section-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.section-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.section-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        box-shadow: var(--shadow);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+
+    .header-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .section {
+        flex-direction: column !important;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .section-content {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .section-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    .section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .section-text {
+        font-size: 0.95rem;
+    }
+}
+
+.video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-description {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+.video-description h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+/* Music Button */
+#music-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#music-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#music-button.playing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i> Zupazupa106
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link " data-section="beranda">Beranda</a></li>
+                  <li><a href="zupa.html" class="nav-link active" data-section="blog">Blog</a></li>
+                <li><a href="galeri.html" class="nav-link" data-section="galeri">Galeri</a></li>
+                <li><a href="anggota.html" class="nav-link" data-section="profil">Anggota Kelas</a></li>
+                <!-- <li><a href="#" class="nav-link" data-section="jadwal">Jadwal</a></li> -->
+              
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="header-title">Tentang Momen ZupaZupa106</h1>
+
+        <!-- Section 1: Awal Terbentuk -->
+        <div class="section">
+            <div class="section-image">
+                <img src="img/foto3.jpg" alt="Awal Terbentuk ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Awal Terbentuk</h2>
+                <p class="section-text">
+                    ZupaZupa106 merupakan kelas yang terbentuk dari semangat sepuluh anggota luar biasa di PalComTech Palembang. Berawal dari pertemuan awal  mereka langsung menunjukkan kekompakan, semangat belajar yang tinggi, dan keinginan besar untuk berkembang di bidang teknologi dan kreativitas digital.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2: Semangat Belajar -->
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo3.jpg" alt="Semangat Belajar ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Nonton Bioskop</h2>
+                <p class="section-text">
+                    Suatu hari yang sederhana menjadi awal dari cerita luar biasa bagi kami. Untuk pertama kalinya, kami menonton film bersama di bioskop — bukan sekadar hiburan, tetapi sebagai momen yang mempertemukan tawa, cerita, dan rasa nyaman dalam satu ruang yang sama.
+
+Di depan cermin besar bertuliskan CINEMA 1-5, kami mengabadikan kebersamaan itu. Satu per satu wajah tersenyum, satu per satu rasa canggung mencair. Bukan karena film yang ditonton, tetapi karena kami saling hadir, menikmati waktu di luar rutinitas biasa.
+
+Dari pertemuan inilah, kedekatan kami mulai tumbuh. Komunikasi jadi lebih terbuka dan kebersamaan tak lagi hanya soal tugas. Kami menjadi lebih dari sekadar tim — kami menjadi teman seperjalanan.
+
+Momen ini bukan hanya sebuah kegiatan, tapi sebuah pijakan awal yang membuat ZupaZupa menjadi lebih solid, hangat, dan menyenangkan.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Kegiatan Kebersamaan -->
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo4.jpg" alt="Kegiatan Kebersamaan ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Belajar Tak Pernah Sendiri</h2>
+                <p class="section-text">
+                   Di balik layar tugas-tugas yang menumpuk, kami menemukan kekuatan yang sesungguhnya: kerja sama.
+Setiap kali ada yang kesulitan, selalu ada tangan yang terulur — entah sekadar menjelaskan ulang, berbagi file referensi, atau cukup duduk menemani hingga tugas selesai.
+Ruang kelas ini bukan hanya tempat belajar, tapi juga tempat saling menguatkan.
+
+
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4: Proyek dan Prestasi -->
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo5.jpg" alt="Proyek dan Prestasi ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Proyek dan Prestasi</h2>
+                <p class="section-text">
+                   Setiap anggota ZupaZupa106 memiliki peran strategis dalam berbagai aktivitas kelas seperti pengembangan website, penyusunan presentasi, hingga produksi karya kreatif. Mereka aktif menuangkan ide dan menunjukkan kemampuan terbaik dalam setiap proses. Beberapa di antaranya bahkan mulai membangun portofolio sebagai bekal menuju dunia profesional.
+                </p>
+            </div>
+        </div>
+        <!-- Section 4: Proyek dan Prestasi -->
+        <div class="section">
+            <div class="section-image">
+                <img src="img/foto15.jpg" alt="Proyek dan Prestasi ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Mengigat Masa Putih Abu-abu</h2>
+                <p class="section-text">
+                  Hari itu bukan sekadar bergaya di depan kamera tapi kami mengenakan seragam dari sekolah masing-masing, membawa serta jejak nostalgia masa SMA yang penuh cerita. Meski berasal dari latar belakang berbeda, di balik lensa photobooth, kami menyatu untuk saling lebih dekat satu sama lain.
+Tawa mengalir, pose tercipta, dan momen itu berubah menjadi kenangan yang tak tergantikan. 
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo7.jpg" alt="Proyek dan Prestasi ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Bukber Zupazupa106</h2>
+                <p class="section-text">
+                 Suatu sore di bulan Ramadan, kami bersepakat untuk menghabiskan waktu bersama dengan mengadakan buka puasa bersama. Tempat yang kami pilih   bernama Kopi Nostalgia. Suasananya hangat dan nyaman, cocok untuk sekadar berbagi cerita sambil menunggu adzan maghrib berkumandang.
+
+Saat azan maghrib berkumandang, kami duduk di tempat yang sudah kami reserfasi sambil menikmati hidangan makanan ringan.  dalam kesederhanaan itulah kami merasakan kehangatan yang luar biasa. Percakapan mengalir begitu saja—tentang tugas, cerita lucu di kelas, bahkan rencana-rencana kecil setelah Ramadan usai.
+
+Buka puasa ini bukan hanya tentang mengisi perut setelah seharian berpuasa, tetapi lebih dari itu, tentang mengisi ruang-ruang kebersamaan yang mungkin jarang ada di tengah padatnya aktivitas dari kami. 
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo6.jpg" alt="Proyek dan Prestasi ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Bermain Sepeda Listrik</h2>
+                <p class="section-text">
+                 Setelah melaksanakan buka puasa bersama di Kopi Nostalgia, kebersamaan kami dari ZupaZupa106 ternyata belum usai. Malam itu, tawa dan cerita masih terasa menggema, seolah enggan untuk diakhiri terlalu cepat. Maka, dengan semangat yang masih menghangat, kami pun memutuskan untuk melanjutkan malam menuju Kambang Iwak.
+
+Suasana malam di taman itu begitu menenangkan. Di bawah cahaya lampu taman yang temaram dan ditemani angin malam yang lembut, kami bersepeda menyusuri jalur-jalur tenang yang mengelilingi danau. Tak ada agenda khusus malam itu—hanya kebersamaan sederhana, canda, dan percakapan ringan yang mengalir begitu saja. 
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-image">
+                <img src="img/photo8.jpg" alt="Proyek dan Prestasi ZupaZupa106">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">Project Akhir</h2>
+                <p class="section-text">
+                Setelah 1 tahun  belajar dan tumbuh bersama, tibalah kami pada fase penting dalam perjalanan kami untuk menyelesaikan project akhir. Masing-masing dari kami mulai mengambil peran yang lebih spesifik, beberapa terlibat dalam kegiatan Magang di luar, dan sebagian lagi memilih jalur TCS . Meski jalan kami mulai bercabang, semangat kolaborasi tetap terasa saat kami menyatukan ide untuk menyelesaikan project kelas.
+
+Project ini bukan sekadar tugas penutup, tapi menjadi simbol dari hasil kerja keras dan kebersamaan kami selama ini. Dari menyusun ide, membagi peran, mendesain, hingga menyelesaikan laporan, setiap proses dijalani dengan semangat yang sama: ingin memberikan yang terbaik.
+
+Usai project selesai, kami pun mulai menyusun laporan untuk keperluan sidang akhir. Di titik inilah kesadaran mulai muncul bahwa waktu-waktu kebersamaan kami tidak akan lagi seintens dulu. Aktivitas individu, persiapan karier, dan arah langkah masing-masing mulai mengambil porsi yang lebih besar.
+
+Mungkin, setelah ini, pertemuan akan menjadi hal yang lebih langka. Tapi kisah dan kenangan dalam setiap kerja sama, tawa, dan perjuangan kami akan tetap hidup—menjadi bagian dari cerita awal perjalanan kami menuju masa depan.
+                </p>
+            </div>
+        </div>
+       
+    </div>
+
+    
+<div class="video-wrapper">
+  <iframe width="100%" height="450" 
+    src="https://www.youtube.com/embed/zimWoCeeco8?autoplay=1&mute=1&loop=1&playlist=zimWoCeeco8"
+    title="Video Kenangan ZupaZupa106"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="video-description">
+  <h2>Cuplikan Perjalanan Zupazupa</h2>
+  <p>
+    Setiap perjalanan pasti punya akhirnya. Tapi bagi kami, akhir bukanlah perpisahan—melainkan cara lain untuk mengenang semua yang telah dilalui bersama.
+    <br><br>
+    ZupaZupa106 bukan hanya sebuah kelompok belajar. Ia adalah ruang tawa, tempat berbagi lelah, dan wadah tumbuh bersama. Dari momen pertama kali saling sapa dengan canggung, hingga sekarang saling mengandalkan dalam setiap tugas dan proyek, kebersamaan kami tumbuh menjadi keluarga kecil yang hangat.
+    <br><br>
+    Banyak hal yang telah kami lalui: mulai dari kerja kelompok hingga sesi foto konyol, dari buka puasa bersama hingga larut malam sambil bersepeda. Semua kenangan itu terekam, bukan hanya lewat kamera, tapi juga di hati masing-masing dari kami.
+    <br><br>
+    Video kenangan ini adalah bentuk kecil dari rasa besar yang ingin kami simpan. Setiap detik, setiap frame, menceritakan kisah tentang kami—tentang kebersamaan, tentang semangat, dan tentang arti menjadi bagian dari sesuatu yang berarti.
+    <br><br>
+    Mungkin kelak kami akan sibuk dengan jalan masing-masing. Tapi kisah ini akan selalu ada, sebagai pengingat bahwa kami pernah berjalan di jalan yang sama, dengan tawa yang sama, dan mimpi yang seirama.
+    <br><br>
+    <strong>Terima kasih, ZupaZupa106. Untuk semuanya.</strong>
+  </p>
+</div>
+
+  <!-- Audio musik -->
+    <audio id="bgmusic" loop>
+        <source src="sound/Lomba Sihir - Ribuan Memori (Official Lyric Video)-yt.savetube.me.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Tombol musik ON/OFF -->
+    <button id="music-button" onclick="toggleMusic()">
+        <i class="bi bi-music-note"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Audio Control
+        const audio = document.getElementById('bgmusic');
+        const button = document.getElementById('music-button');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                audio.play();
+                isPlaying = true;
+                button.innerHTML = '<i class="bi bi-volume-up"></i>';
+                button.classList.add('playing');
+            } else {
+                audio.pause();
+                isPlaying = false;
+                button.innerHTML = '<i class="bi bi-music-note"></i>';
+                button.classList.remove('playing');
+            }
+        }
+
+
+
+       document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        if (href.startsWith('#')) {
+            e.preventDefault();
+
+            // Scroll ke section
+            const section = document.querySelector(href);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Atur active link
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        }
+    });
+});
+
+ // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+</script>
+</body>
+</html>
